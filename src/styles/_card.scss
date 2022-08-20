@@ -1,0 +1,213 @@
+#main {
+    margin-top: rem(50px);
+
+    .container {
+        padding: 0rem 0.3rem;
+
+        @include breakpoint(xxsmall) {
+            padding: 0rem 4rem;
+        }
+
+        @include breakpoint(small) {
+            max-width: 75rem;
+            padding: 0 2.25rem;
+            margin: 0 auto;
+        }
+    }
+}
+
+.dp-cards {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    @include breakpoint(medium) {
+        justify-content: space-between;
+    }
+}
+
+.card:nth-child(odd) {
+    margin-right: rem(10px);
+}
+
+@include breakpoint (large) {
+    .card:not(:nth-child(3n)) {
+        margin-right: rem(20px);
+    }
+}
+
+.card {
+    position: relative;
+    text-align: center;
+    margin-bottom: rem(50px);
+    width: 320px;
+    overflow: hidden;
+    animation: showCard 0.7s ease-out forwards;
+
+    img {
+        vertical-align: middle;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
+        object-fit: cover;
+    }
+
+    &__body,
+    &__footer {
+        background: $skyblue;
+    }
+
+    &__body {
+        &-name {
+            color: $text-navy;
+            padding: rem(10px) 0;
+            font-size: rem(20px);
+            font-weight: $font-bold;
+            font-weight: normal;
+            border-bottom: 4px solid $text-navy;
+        }
+
+        &-infos {
+            padding: rem(15px) 0;
+            display: flex;
+            justify-content: center;
+            color: $text-navy;
+
+
+            span {
+                white-space: nowrap;
+                font-size: rem(12.5px);
+            }
+
+            span:not(:last-child) {
+                padding-right: rem(5px);
+                border-right: 3px solid $text-navy;
+            }
+
+            span:not(:first-child) {
+                padding-left: rem(5px);
+            }
+        }
+    }
+
+    &__footer {
+        border-top: 3px solid $text-navy;
+        padding: rem(15px) 0;
+        background: $text-navy;
+        cursor: pointer;
+
+        *:not(:hover) {
+            transition: all .4s ease-in-out;
+        }
+
+        p {
+            color: $white;
+        }
+
+        &:hover p {
+            color: $text-navy;
+            transition: all .4s ease-in-out;
+        }
+
+        &:hover {
+            background-color: $skyblue;
+            color: $text-navy;
+            transition: all .4s ease-in-out;
+        }
+    }
+}
+
+
+.load-animate {
+    transform: translateY(60px);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: $skyblue;
+    border-radius: 100%;
+    margin: 0px rem(5px);
+    writing-mode: vertical-lr;
+}
+
+.up {
+    transform: translateY(48px);
+    opacity: 1;
+    animation-name: move;
+    animation-duration: 1.35s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+.delay-one {
+    animation-delay: 0s;
+}
+
+.delay-two {
+    animation-delay: 0.2s;
+}
+
+.delay-three {
+    animation-delay: 0.4s;
+}
+
+
+.info {
+    text-align: center;
+    color: $skyblue;
+    font-size: rem(60px);
+}
+
+.def__header {
+    background-color: $skyblue;
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    box-shadow: 0 -5px 25px -5px #1A237E;
+    margin-bottom: rem(50px);
+}
+
+.favorite-btn {
+    background-color: $text-navy;
+    font-size: rem(20px);
+    cursor: pointer;
+    width: 100%;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-top: 3px solid $skyblue;
+    padding: rem(10px) 0;
+    color: white;
+
+    &:hover {
+        color: red;
+    }
+
+    svg {
+        vertical-align: middle;
+    }
+
+    span {
+        padding-left: rem(5px);
+        font-size: rem(16px);
+    }
+
+    &:hover {
+        background-color: $skyblue;
+        transition: all .4s ease-in-out;
+    }
+
+    &:not(:hover) {
+        transition: all .4s ease-in-out;
+    }
+}
+
+.favorite-btn.added {
+    color: red !important;
+}

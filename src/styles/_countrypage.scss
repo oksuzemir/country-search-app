@@ -1,0 +1,114 @@
+.country-wrapper {
+    margin-top: rem(65px);
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-top: 3px solid $text_navy;
+    border-bottom: 3px solid $text_navy;
+    background-color: $skyblue;
+    box-shadow: 0 4px 4px -2px #1A237E;
+    padding-bottom: rem(30px);
+    animation: showCard 0.4s ease-in;
+    height: 100vh;
+
+
+    @include breakpoint(xsmall) {
+        align-items: unset;
+        height: 80vh;
+    }
+
+    .container {
+        background-color: $skyblue;
+
+        @include breakpoint(xxsmall) {
+            padding: 0 3.25rem;
+        }
+
+        @include breakpoint(small) {
+            max-width: 75rem;
+            padding: 0 3.25rem;
+            margin: 0 auto;
+        }
+
+        @include breakpoint(medium) {
+            max-width: 75rem;
+            padding: 0 5.25rem;
+            margin: 0 auto;
+        }
+    }
+
+    .country {
+        display: flex;
+        position: relative;
+        flex-direction: column;
+        align-items: center;
+
+
+        &__name {
+            color: $text_navy;
+            font-size: rem(50px);
+            position: relative;
+            text-align: center;
+            user-select: none;
+            text-shadow: -1px 1px #a8d5baff, -2px 2px #d7a9e3ff, -3px 3px #a8d5baff, -4px 4px #d7a9e3ff, -5px 5px #a8d5baff, -6px 6px #d7a9e3ff, -7px 7px #a8d5baff, -8px 8px #d7a9e3ff;
+
+            @include breakpoint(xsmall) {
+                width: 100vw;
+                margin-left: -50vw;
+                margin-right: -50vw;
+                padding: 20px 0px;
+            }
+
+            @include breakpoint(large) {
+                padding-bottom: 10px;
+            }
+        }
+
+        &__flag {
+            margin-top: rem(30px);
+            width: 100%;
+
+            @include breakpoint(large) {
+                width: 50%;
+            }
+        }
+
+        &__infos {
+            width: 100%;
+            margin-top: rem(20px);
+            padding: 0rem 0.7rem;
+
+            .infos__list {
+                columns: 2;
+                @include breakpoint(small) {
+                    display: flex;
+                    white-space: nowrap;
+                    padding-top: rem(20px);
+                    flex-wrap: wrap;
+                    justify-content: center;
+                }
+
+                &-item {
+                    @include breakpoint(small) {
+                        display: flex;
+                        margin-right: 20px;
+                        padding-bottom: rem(20px);
+                    }
+
+                    font-size: rem(20px);
+
+                    span {
+                        color: $text_navy;
+                        vertical-align: middle;
+                    }
+
+                    svg {
+                        vertical-align: middle;
+                        color: $text_navy;
+                        margin-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+}

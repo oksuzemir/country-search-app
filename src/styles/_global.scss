@@ -1,0 +1,62 @@
+::selection {
+    background-color: $text-navy;
+    color: $white;
+}
+
+.d-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.spinner {
+    position: relative;
+    height: 100vh;
+    color: $text-navy;
+    font-size: rem(50px);
+    animation: spin infinite 3s linear;
+
+    @include breakpoint(xsmall) {
+        font-size: rem(50px);
+    }
+}
+
+.load-text {
+    padding-left: rem(30px);
+    font-size: rem(50px);
+    color: $text-navy;
+
+    @include breakpoint(xsmall) {
+        font-size: rem(40px);
+    }
+}
+
+.notfound {
+    margin: 0 auto;
+    font-size: rem(30px);
+    color: $text-navy;
+    padding-top: rem(30px);
+    padding-bottom: rem(70px);
+}
+
+.popular {
+    padding: 2rem 0px;
+    position: relative;
+    display: inline;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5625rem;
+    color: $white;
+}
+
+.body-close {
+    overflow: hidden;
+}

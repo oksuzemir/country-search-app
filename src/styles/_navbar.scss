@@ -1,0 +1,201 @@
+.topbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: $skyblue;
+    z-index: 9999;
+    transition: box-shadow 0.3s ease-in-out;
+
+    .container {
+        padding: rem(15px) 40px;
+
+        @include breakpoint (xsmall) {
+            margin: 0 rem(20px);
+            padding: rem(15px) 0px;
+        }
+
+        @include breakpoint (large) {
+            max-width: rem(1200px);
+            margin: 0 auto;
+        }
+
+
+    }
+
+    &__desktop {
+        width: 100%;
+
+        .brand {
+            &__link {
+                display: flex;
+                align-items: center;
+
+                img {
+                    padding-right: rem(15px);
+                    vertical-align: middle;
+                }
+
+                .brand-name {
+                    font-weight: $font-xbold;
+                    color: $white;
+                    color: $text-navy;
+
+                    @include breakpoint(small) {
+                        transition: text-shadow 0.3s ease;
+                        font-size: rem(20px);
+
+                        &:hover {
+                            text-shadow:
+                                -1px 1px #a8d5baff,
+                                -2px 2px #d7a9e3ff,
+                                -3px 3px #a8d5baff,
+                                -4px 4px #d7a9e3ff,
+                                -5px 5px #a8d5baff,
+                                -6px 6px #d7a9e3ff,
+                                -7px 7px #a8d5baff,
+                                -8px 8px #d7a9e3ff;
+                        }
+                    }
+                }
+            }
+        }
+
+        .nav {
+            @include breakpoint(xsmall) {
+                display: none;
+            }
+
+            &__list {
+                display: flex;
+
+                a {
+                    font-weight: $font-bold;
+                    color: $text-navy;
+
+                    &:hover {
+                        transform: translateY(-3px);
+                        transition: all 0.3s ease;
+                    }
+
+                    &:not(:hover) {
+                        transition: all 0.3s ease;
+                    }
+                }
+
+                &-item {
+                    padding: 0px rem(10px);
+                }
+            }
+        }
+    }
+
+    .mobile {
+        display: none;
+        transition: all 0.6s ease;
+
+        @include breakpoint(xsmall) {
+            display: block;
+            position: absolute;
+            top: 100%;
+            width: 100%;
+            height: auto;
+            width: 100vw;
+            left: 50%;
+            right: 50%;
+            margin-left: -50vw;
+            margin-right: -50vw;
+            background-color: $skyblue;
+            border-top: 1px solid $text-navy;
+            transform: translateX(100%);
+
+            &__nav {
+                text-align: center;
+                margin: rem(10px) 0px;
+
+                &-list {
+                    li {
+                        padding: rem(10px) 0px;
+
+                        a {
+                            font-weight: $font-bold;
+                            color: $text-navy;
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+    @include breakpoint(xsmall) {
+
+        .mobile.active {
+            transform: translateX(0);
+        }
+    }
+
+    &__toggle {
+        @include breakpoint(small) {
+            display: none;
+        }
+
+        background: #fff;
+        cursor: pointer;
+        width: 28px;
+        height: 28px;
+        position: relative;
+
+        span {
+            position: absolute;
+            display: inline-block;
+            width: 80%;
+            border: 2px solid #0070c9;
+            border-radius: 20px;
+            background: #0070c9;
+            box-shadow: 0 1px 15px rgb(0 0 0 / 50%);
+            opacity: 1;
+            transition: transform 0.2s, top 0.2s, opacity 0.2s;
+            transition-delay: 0s, 0.2s, 0.2s;
+        }
+
+        .line-1 {
+            top: 15%;
+        }
+
+        .line-2 {
+            top: 45%;
+        }
+
+        .line-3 {
+            top: 75%;
+        }
+    }
+
+    &__toggle.active {
+        .line-1 {
+            top: 50%;
+            transform: translate(0, -50%) rotate(-45deg);
+        }
+
+        .line-2 {
+            opacity: 0;
+        }
+
+        .line-3 {
+            top: 50%;
+            transform: translate(0, -50%) rotate(45deg);
+        }
+
+        span {
+            transition: top 0.2s, transform 0.2s, opacity 0.5s;
+            transition-delay: 0s, 0.2s, 0.2s;
+        }
+    }
+}
+
+.topbar.scroll {
+    box-shadow: 0px 1px 10px $text-navy;
+}

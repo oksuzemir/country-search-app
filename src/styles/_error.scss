@@ -1,0 +1,82 @@
+.error-page {
+    margin-top: rem(65px);
+    height: 60vh;
+    flex-direction: column;
+
+    @include breakpoint(small) {
+        height: 70vh;
+    }
+
+    @include breakpoint(xxsmall) {
+        height: 75vh;
+    }
+
+    @include breakpoint(medium) {
+        height: 80vh;
+    }
+
+    .error-info {
+        margin: 0 rem(30px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        @include breakpoint(xsmedium) {
+            flex-direction: column;
+        }
+
+        @include breakpoint(xsmall) {
+            flex-direction: column;
+        }
+    }
+
+    .error-button {
+        transform: translateY(-100px);
+    }
+
+    .button {
+        font-weight: 300;
+        color: $skyblue;
+        background-color: $text-navy;
+        font-size: 1.2em;
+        text-decoration: none;
+        border: 1px solid #efefef;
+        padding: .5em;
+        border-radius: 3px;
+        transition: all .3s linear;
+
+        @include breakpoint(xsmall) {
+            font-size: 1.1em;
+        }
+    }
+
+    .button:hover {
+        background-color: #007aff;
+        color: #fff;
+    }
+
+    p {
+        font-size: 2em;
+        text-align: center;
+        font-weight: 100;
+
+        @include breakpoint(xsmall) {
+            font-size: 1.5em;
+        }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 15em;
+        font-weight: 100;
+        color: $text-navy;
+
+        @media screen and (max-width: 900px) {
+            font-size: 10em;
+        }
+
+        @include breakpoint(xsmall) {
+            font-size: 8em;
+        }
+    }
+}

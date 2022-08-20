@@ -1,0 +1,93 @@
+.hero {
+    margin-top: 64px;
+
+    &__bg-image {
+        width: 100vw;
+        overflow: hidden;
+        background-position: 50% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        text-align: center;
+        
+        
+        @include breakpoint(xsmall) {
+            height: rem(350px);
+            padding: 0px rem(15px);
+        }
+        
+        @include breakpoint(small) {
+            height: rem(500px);
+            padding: 0px rem(15px);
+        }
+
+        @include breakpoint(xxlarge) {
+            height: rem(550px);
+        }
+
+        .context {
+            margin-top: rem(50px);
+
+            .hero__header {
+                user-select: none;
+                text-shadow:
+                    -1px 1px #a8d5baff,
+                    -2px 2px #d7a9e3ff,
+                    -3px 3px #a8d5baff,
+                    -4px 4px #d7a9e3ff,
+                    -5px 5px #a8d5baff,
+                    -6px 6px #d7a9e3ff,
+                    -7px 7px #a8d5baff,
+                    -8px 8px #d7a9e3ff;
+                position: relative;
+                color: #213970;
+                font-weight: $font-bold;
+                letter-spacing: 2px;
+                padding-bottom: rem(5px);
+
+                &::before {
+                    @include pseudo();
+                    background: $text-navy;
+                    height: 3px;
+                    transform: translate(-50%, -50%);
+                    left: 50%;
+                    bottom: 5px;
+                    animation: lineAnimation 0.4s forwards ease-in;
+
+                    @include breakpoint(xsmall) {
+                        bottom: 0;
+                        animation: lineAnimationForMobile 0.4s forwards ease-in;
+                    }
+                }
+
+
+                @include breakpoint(small) {
+                    padding-bottom: rem(15px);
+                    font-size: rem(50px);
+                }
+
+                @include breakpoint(xsmedium) {
+                    font-size: rem(35px);
+                }
+
+            }
+
+            .hero__context {
+                color: #213970;
+
+                @include breakpoint(xsmall) {
+                    padding-top: rem(10px);
+                }
+
+                @include breakpoint(small) {
+                    font-size: rem(25px);
+                }
+
+                @include breakpoint(xsmedium) {
+                    font-size: rem(20px);
+                }
+
+                line-height: 1.4;
+            }
+        }
+    }
+}

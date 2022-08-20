@@ -1,0 +1,70 @@
+// PX TO REM
+
+@function rem($pixels) {
+    @return #{$pixels / 16px}rem;
+}
+
+// RESPONSIVE BREAKPOINT FUNCTIONS
+
+@mixin breakpoint($point) {
+    @if $point==xxlarge {
+        @media (min-width: rem(1500px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==xlarge {
+        @media (min-width: rem(1200px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==large {
+        @media (min-width: rem(992px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==medium {
+        @media (min-width: rem(768px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==xsmedium {
+        @media (max-width: rem(767px)) and (min-width: rem(615px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==small {
+        @media (min-width: rem(614px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==xsmall {
+        @media (max-width: rem(613px)) {
+            @content ;
+        }
+    }
+
+    @else if $point==xxsmall {
+        @media (max-width: rem(612px)) and (min-width: rem(500px)) {
+            @content ;
+        }
+    }
+    @else if $point==footersmall {
+        @media (max-width: rem(612px)) and (min-width: rem(500px)) {
+            @content ;
+        }
+    }
+}
+
+// BEFORE & AFTER DEFAULT VALUES MIXIN
+
+@mixin pseudo($display: block, $pos: absolute, $content: '') {
+    content: $content;
+    display: $display;
+    position: $pos;
+}

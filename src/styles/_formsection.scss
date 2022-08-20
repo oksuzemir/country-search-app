@@ -1,0 +1,48 @@
+ .form__section {
+    margin-top: -1px;
+
+    .container {
+        @include breakpoint(small) {
+            max-width: rem(1200px);
+            margin: 0 auto;
+            padding: 0 rem(40px);
+        }
+    }
+
+    &-header {
+        box-shadow: 0 -5px 25px -5px $text-navy;
+        background-color: $skyblue;
+        text-align: center;
+        color: $white;
+        padding: rem(32px) 0px;
+        letter-spacing: 1px;
+
+        @include breakpoint(small) {
+            font-size: rem(25px);
+        }
+
+        @include breakpoint(xsmall) {
+            font-size: rem(18px);
+            line-height: 1.5;
+        }
+
+        .breakword {
+            display: block;
+
+            span {
+                display: inline-block;
+                animation: shakeLetter 500ms ease;
+            }
+
+            @include breakpoint(small) {
+                display: inline;
+            }
+        }
+
+
+        @include breakpoint(small) {
+            margin-left: calc(-100vw / 2 + 500px / 2);
+            margin-right: calc(-100vw / 2 + 500px / 2);
+        }
+    }
+}

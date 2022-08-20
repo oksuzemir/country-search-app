@@ -1,0 +1,117 @@
+.search {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: rem(35px);
+
+    @include breakpoint(small) {
+        justify-content: center;
+    }
+
+    @include breakpoint(xsmall) {
+        flex-direction: column;
+        padding: 0px 0.3rem;
+    }
+
+    &__form {
+        white-space: nowrap;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+
+        @include breakpoint(xsmall) {
+            order: 1;
+        }
+
+        @include breakpoint(small) {
+            margin-right: rem(15px);
+        }
+
+        height: rem(40px);
+
+        &-input {
+            width: 100%;
+            position: relative;
+            background-color: $skyblue;
+            color: $text-navy;
+            height: 100%;
+            border: none;
+            vertical-align: middle;
+            outline: none;
+            padding: rem(5px) rem(15px);
+            font-size: rem(16px);
+            border-left: 10px solid $text-navy;
+            transition: all 0.1s ease-in-out;
+
+            &:focus {
+                border-top: 3px solid $text-navy;
+                border-bottom: 3px solid $text-navy;
+            }
+
+            &:focus+.search__form-button {
+                border-top: 3px solid $text-navy;
+                border-bottom: 3px solid $text-navy;
+                border-right: 3px solid $text-navy;
+            }
+        }
+
+        &-button {
+            background-color: $skyblue;
+            vertical-align: middle;
+            border: none;
+            outline: none;
+            height: 100%;
+            padding: 0 rem(10px);
+            cursor: pointer;
+            border-left: 3px solid $text-navy;
+            transition: all 0.1s ease-in-out;
+
+            @include breakpoint(small) {
+                padding: 0 rem(25px);
+            }
+
+            &:hover {
+                background-color: $text-navy;
+                transition: all 0.4s ease-in;
+            }
+
+            &:hover svg {
+                color: $skyblue;
+                transition: all 0.4s ease-in;
+            }
+
+            svg {
+                color: $text-navy;
+                font-size: rem(25px);
+            }
+        }
+    }
+
+    .filter {
+        width: 80%;
+        height: rem(40px);
+
+        @include breakpoint(small) {
+            width: 40%;
+        }
+
+        &-search {
+            height: 100%;
+            text-align: center;
+            width: 100%;
+            border: none;
+            padding: rem(5px);
+            cursor: pointer;
+            background: $skyblue;
+            color: $text-navy;
+            font-size: rem(20px);
+        }
+
+    }
+
+    &__filter {
+        @include breakpoint(xsmall) {
+            margin-bottom: rem(25px);
+        }
+    }
+}
